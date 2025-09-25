@@ -1,0 +1,34 @@
+{
+"Python": [
+    {
+    "nivel": "fundamentos",
+    "categoria": "sintaxis basica",
+    "concepto": "variables",
+    "descripcion": "Declaración y uso de variables en Python",
+    "ejemplo_basico": "x = 5",
+    "proposito": "Almacenar datos en memoria",
+    "reglas_uso": "Usar nombres descriptivos, evitar palabras reservadas",
+    "errores_comunes": "Usar variables sin inicializar",
+    "memorizacion": "Practicar con ejemplos diarios",
+    "aplicacion_practica": "Guardar datos temporales en programas",
+    "nivel_dificultad": "bajo",
+    "relacion_otros_temas": "tipos de datos, operaciones",
+    "tiempo_estimado_aprendizaje": "30 minutos"
+    },
+    {
+    "nivel": "fundamentos",
+    "categoria": "sintaxis basica",
+    "concepto": "funciones",
+    "descripcion": "Definición y uso de funciones en Python",
+    "ejemplo_basico": "def saludar(): print('Hola')",
+    "proposito": "Reutilizar código",
+    "reglas_uso": "Nombrar funciones con minúsculas y guiones bajos",
+    "errores_comunes": "Olvidar el return",
+    "memorizacion": "Crear funciones simples todos los días",
+    "aplicacion_practica": "Organizar programas grandes",
+    "nivel_dificultad": "medio",
+    "relacion_otros_temas": "estructuras de control, programación modular",
+    "tiempo_estimado_aprendizaje": "1 hora"
+    }
+]
+}

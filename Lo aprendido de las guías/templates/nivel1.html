@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Álgebra - Nivel 1</title>
+</head>
+<body>
+    <h1>🧮 Nivel 1: Operaciones con polinomios</h1>
+    <p><strong>Instrucción:</strong> Simplifica la siguiente expresión:</p>
+
+    <h2>{{ expresion }}</h2>
+
+    <form method="POST">
+        <input name="respuesta" placeholder="Escribe aquí tu resultado" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if mensaje %}
+        <p><strong>{{ mensaje }}</strong></p>
+    {% endif %}
+
+    <p>Nivel actual: {{ nivel }} | Aciertos: {{ intentos }}/5</p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Operaciones Aritméticas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='opera.css') }}">
+</head>
+<body>
+    
+    <img src="{{ url_for('static', filename='img/oper.jpg') }}" alt="oper" width="300">
+
+    <h1>Resuelve las operaciones</h1>
+
+    <form method="POST" action="{{ url_for('opbasicas') }}">
+        <center><table border="1">
+            <tr>
+                <th>Operación</th>
+                <th>Tu Respuesta</th>
+            </tr>
+            {% for op in operaciones %}
+            <tr>
+                <td>{{ op.operacion }}</td>
+                <td>
+                    <input type="number" name="{{ op.id }}" />
+                </td>
+            </tr>
+            {% endfor %} <!-- 🛠 ESTO FALTABA -->
+        </table>
+        <br>
+        <input type="submit" value="Enviar respuestas">
+    </form>
+
+    {% if errores %}
+        <h2>Errores detectados:</h2>
+        <ul style="color: red;">
+            {% for error in errores %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %} </center>
+------------------------------------------------------------------------------
+<a href="{{ url_for('nivel1') }}">(clic para operaciones con polinomios)</a> </br>
+
+
+</body>
+</html>

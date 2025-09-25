@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.table-container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.tabla-custom {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.tabla-custom th,
+.tabla-custom td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    height: 60px;
+    width: 16.6%;
+}
+
+.tabla-custom th {
+    background-color: #222;
+    color: white;
+}
+
+select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    width: 100%;
+    font-size: 14px;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background-image: url("/static/imagenes/lov.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}

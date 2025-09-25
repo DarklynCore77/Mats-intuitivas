@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='pote.css') }}">
+    <meta charset="UTF-8">
+    <title>Potencias con exponentes enteros y racionales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <img src="{{ url_for('static', filename='img/pot.jpg') }}">
+    <center><h1>Potencias con exponentes enteros y racionales</h1></center>
+
+<title>Formulario de Potencias</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+            font-family: sans-serif;
+        }
+        .formulario {
+            position: relative;
+            top: 200px;      /* Aquí mueves el formulario hacia abajo */
+            left: 100px;     /* Aquí mueves el formulario hacia la derecha */
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+
+
+
+<style>
+    #cuadro-notas {
+    width: 300px;
+    height: 100px;
+    border: 5px solid #94ff1b;
+    margin-top: -13px;
+    padding: 10px;
+    font-size: 22px;
+    background-color: #b300ca9c;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(39, 250, 11, 0.89);
+    transition: opacity 18s;
+    }
+    
+    .formulas,
+    .procedimientos,
+    .reglas {
+      display: none;
+      position: relative;
+      left: 0;
+      padding: 10px;
+      max-width: 220px;
+      background-color: #091266;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    }
+    .separado {
+      margin-left: 15px;
+      margin-right: 80px;
+      margin-top: 40px;
+      padding: 100px;
+      background-color: #ffb300;
+      border-radius:30px;
+      max-width: 160px;
+      background-color: #05296b;
+      border-radius: 10px;
+      max-width: 160px;
+    }
+  button {
+      padding: 20px 20px;
+      font-size: 20px;
+      width: 200px;
+    }
+  </style>
+  <!-- Si quieres usar MathJax para mostrar fórmulas bonitas -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script> 
+</head>
+
+<body>     
+<!---ARCHIVO NECESARIO OBLIGATORIO PARA VINCULAR A FLASK-->
+<!-- El formulario y resultado solo deben aparecer una vez, ya está arriba -->
+
+<!-- Aquí se mostrarán las notas -->
+  <div id="cuadro-notas" style="position: relative; top: -13px; left: 30px;
+    background-color: #0b0c01; color: #94ff1b; padding: 10px; border-radius: 10px; box-shadow: 3px 3px 10px rgba(39, 250, 11, 0.89);">
+  </div>
+    
+<!---BOTONES Y PANELES DESPLEGABLES-->
+<div style="display: flex; gap: 20px;">
+
+<!-- Primer botón: Formulario -->
+  <div style="position: relative; display: inline-block; ">
+  <button onclick="mostrarFormulario()">Formulario</button>
+  <div class="formulas" id="listaFormulas"style="position: absolute; left: 0; top: 100%; ...">
+    <ul>
+      <li>Potencia de un número entero: \( a^n \)</li>
+      <li>Potencia de un número racional: \( \left(\frac{a}{b}\right)^n = \frac{a^n}{b^n} \)</li>
+      <li>Potencia de un número con exponente negativo: \( a^{-n} = \frac{1}{a^n} \)</li>
+    <li>Potencia de un número con exponente cero: \( a^0 = 1 \) (si \( a \neq 0 \))</li>
+    
+  <!--contenido-->
+  </ul>
+</div>
+  </div>
+<!-- Segundo botón: Procedimi|entos -->
+  <div style="position: relative; display: inline-block;">
+  <button onclick="mostrarProcedimientos()">Procedimientos</button>
+  <div class="procedimientos" id="listainstrucciones" style="position: absolute; left: 0; top: 100%;">
+    <ul>
+      <li>Identifica la base y el exponente.</li>
+      <li>Aplica las reglas de las potencias según el tipo de exponente (entero o racional).</li>
+      <li>Realiza las operaciones necesarias.</li>
+      <li>Verifica tu resultado.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tercer botón: Reglas -->
+<div style="position: relative; display: inline-block;">
+  <button onclick="mostrarReglas()">Reglas</button>
+  <div class="reglas" id="listareglas" style="position: absolute; left: 0; top: 100%;">
+    <ul>
+      <li>reglas de potencias con exponente racional</li>
+      <li>regla de potencia con exponente real</li>
+      <li>ola </li>
+      <li>ola</li>
+    </ul>
+  </div>
+</div>
+</div>
+<!-- Script de botones separados correctamente -->
+<script>
+function mostrarFormulario() {
+    const div = document.getElementById("listaFormulas");
+    div.style.display = (div.style.display === "none" || div.style.display === "") ? "block" : "none";
+  }
+function mostrarProcedimientos() {
+    const div = document.getElementById("listainstrucciones");
+    div.style.display = (div.style.display === "none" || div.style.display === "") ? "block" : "none";
+  }
+  function mostrarReglas() {
+  const div = document.getElementById("listareglas");
+  div.style.display = (div.style.display === "none" || div.style.display === "") ? "block" : "none";
+}
+</script>
+
+<!--SCRIPT DE NOTAS-->
+  <script>
+    const notas = [
+    "Potencia: Forma abreviada de multiplicar un número por sí mismo.",
+    "Exponente: Número que indica cuantas veces se multiplica la base por si misma.",
+    "Entero (Z): Número que no tiene parte decimal o fraccionaria .",
+    "Racional: Número que puede expresarse con una fracción.",
+    "Base o constante: Número que se multiplicara a si mismo las veces que indique el exponente.",
+    "No te olvides de practicar con ejercicios.",
+    "Recuerda que las potencias con exponentes enteros pueden ser positivas, negativas o cero.",
+    "Las potencias con exponentes racionales implican raíces y fracciones.",
+    "La jerarquía de operaciones es importante al trabajar con potencias.",
+    ];
+    let indice = 0;
+    const cuadro = document.getElementById("cuadro-notas");
+    function mostrarNota() {
+      cuadro.style.opacity = 0; // Oculta el texto anterior
+    setTimeout(() => {
+        cuadro.textContent = notas[indice];
+        cuadro.style.opacity = 1; // Muestra el nuevo texto
+        indice = (indice + 1) % notas.length;
+      }, 400); // Espera para que se note la transición
+    }
+// Mostrar la primera nota inmediatamente
+mostrarNota();
+// Cambiar nota cada 3 segundos
+    setInterval(mostrarNota, 5000);
+</script>
+<!---ARCHIVO NECESARIO OBLIGATORIO PARA VINCULAR A FLASK-->
+<h1>Calculadora</h1>
+    <form method="POST">
+      <label>Base:</label>
+        <input type="number" name="base" required><br><br>
+        <label>Exponente:</label>
+        <input type="number" name="exponente" required><br><br>
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado is not none %}
+        <h3>Resultado: {{ resultado }}</h3>
+    {% endif %}
+
+    <div style="float: right;">
+  Resuelve las potencias con exponentes enteros y racionales. <br>
+  
+</div>
+
+
+
+
+
+
+    <br><a href="/aritmetica">Volver a Aritmética</a>
+
+</body>
+</html>
