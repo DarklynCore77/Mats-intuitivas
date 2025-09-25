@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='ari.css') }}">
+<body>
+    <img src="{{ url_for('static', filename='img/ar.jpg') }}" alt="ar" width="100%" height="200px">
+    <header>
+        Estudia Matemáticas
+    </header>
+    <main>
+        <h1>Aritmética</h1>
+        <p>
+            <br><button onclick="cero()">-¿Qué y cuáles son las Propiedades de los números reales?</button><a href="{{ url_for('propiedades') }}">(Números utilizados en operaciones matemáticas)</a></br>
+            <br><button onclick="uno()">-¿Cuáles son las Operaciones fundamentales con números reales?</button><a href="{{ url_for('opbasicas') }}">(Suma, resta, multiplicación y división.)</a> </br>
+            <br><button onclick="dos()">-¿Qué y como es la Jerarquización de las operaciones</button?> </button><a href="{{ url_for('jerarquia') }}">(Orden en que deben realizarse las operaciones matemáticas.)</a></br>
+            <br><button onclick="tres()">-¿Qúe son las Potencias con exponentes enteros y racionales?</button><a href="{{ url_for('potyexpo') }}">(clic para operaciones con exponentes)</a><br><a href="/">Volver al inicio</a></p>
+        <button onclick="mostrarAlerta()">¿Aritmética?</button>
+    </main>
+        <script>
+        function tres() {
+     alert('POTENCIA: *Forma abreviada de multipplicar un número por si mismo* \n' +
+            '🚀Potencias con exponentes ENTEROS: Es una expresión donde a es la Base y b el Exponente, dependiendo de como sea el exponente, las reglas cambiarán \n' +
+            'EXPONENTE entero POSITIVO (b>0) Significa que la base se multiplica por sí misma b veces. \n' +
+            'Exponente cero Cualquier número distinto de 0 elevado a la potencia 0 es 1* \n' + 
+            'EXPONENTE entero NEGATIVO (b<0), representa el inverso de la base elevada al exponente positivo* \n' +
+            '🚀potencias con exponentes RACIONALES: son fracciones, donde m y n son enteros. Se interpretan como raíces \n' +
+            '-exponente fraccionario-\n' +
+            '-cuando hay un numerador mayor a 1 \n' +
+            '-exponente racional negativo\n' + 
+            'CONCLUSIÓN:Los exponentes enteros indican multiplicaciones repetidas o inversiones, mientras que los racionales\n' +
+            'involucran raíces y potencias combinadas. El verdadero giro de tuerca ocurre cuando entramos en bases\n' +
+            'negativas o exponentes más complejos. 🚀');
+                 
+   }
+    </script>
+
+       <script>
+        function dos() {
+            alert('Esto significa que es un Orden en el que deben resolverse las operaciones y siguen esta prioridad:-Paréntesis (y otros signos de agrupación)\n' +
+                  '-Exponentes y raíces (potencias y radicales) \n' +
+                  '-Multiplicación y división (de izquierda a derecha)\n' +
+                  '-Suma y resta (de izquierda a derecha)\n' + 
+                  'COMPLEJIDAD= 1-Expresiones con múltiples signos de agrupación, 2-Exponentes combinados con raíces y fracciones, \n' + 
+                  '3-Logaritmos y exponentes fraccionarios\n' + 
+                  '4-Expresiones con aritmética modular y teoría de números.' ); 
+   }
+    </script>
+
+    <script>
+        function uno() {
+            alert('SUMA, RESTA, MULTIPLICACIÓN, DIVISIÓN POTENCIACIÓN, RADIACIÓN, LOGARITMACIÓN\n' +
+                'La aritmética es más interesante cuando combinamos estas operaciones con\n' +
+                'propiedades mas avanzadas como |Jerarquía de operaciones|Números negativos y fraccionarios|\n' +
+                'Exponentes fraccionaarios y negativos|Logaritmos y sus propiedades|\n' +
+                'LO MÁS COMPPLEJO EN ARITMÉTICA: NÚMEROS IRRACIONALES/ ARITMÉTICA MODULAR/ DIVISIBILIDAD Y TEORÍA DE NÚMEROS\n' +
+                'Lo mas "tricky" en la aritmética pura es la aritmética modúlar y la teoría de números');
+    }
+    </script>
+
+    <script>
+        function cero() {
+            alert('son el conjunto de todos los números que pueden representarse en una recta numérica. Incluyen:\n' +
+                'Números naturales "N": 1,2,3,...\n' +
+                'Números enteros "Z": -2, -1 0, 1, 2,... (ya sean positivos o/y negativos\n' +
+                'Numeros Racionales "Q": Números que pueden expresarse como fracción y tienen decimales infinitos no periódicos \n' +
+                '(ej; pi, e, raíz cuadrada.)');
+        }
+    </script>
+    <script>
+        function mostrarAlerta() {
+            alert('Es la rama más básica de las matemáticas, suma, resta, multiplicación y división,\n' +
+                'además de contar y programar con estos, se trata de comprender cómo los números\n' +
+                'interactúan entre sí, lo que lleva a conceptos para comprender esa interacción como\n' +
+                'exponentes, raíces, fracciones y números racionales e irracionales.');
+                
+        }         
+    </script>
+</body>
+</html>

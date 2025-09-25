@@ -1,0 +1,39 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fa1515;
+            padding: 20px;
+            color:rgb(55, 226, 3);
+            margin: 0;
+            padding: 0;
+            background-image: url("/static/imagenes/pro.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ba1789;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #7c315b;
+        }
+        th {
+            background-color: #c900f1;
+            color: rgb(19, 3, 90);
+        }
+        button {
+            padding: 6px 12px;
+            background-color: #007BFF;
+            color: rgb(163, 24, 133);
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }

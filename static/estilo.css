@@ -1,0 +1,10 @@
+body {
+    color:aliceblue;
+    margin: 0;
+    padding: 0;
+    background-image: url("/static/imagenes/failure.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biblioteca de lenguaje python</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='love.css') }}">
+    <title>Aprendiendo Lenguajes</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aprende Lenguajes de Programación</h1>
+
+    <label for="lenguaje">Selecciona un lenguaje:</label>
+    <select id="lenguaje">
+        <option value="">-- Selecciona --</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="C++">C++</option>
+    </select>
+
+    <h2>Conceptos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>nivel</th>
+                <th>categoria</th>
+                <th>Concepto</th>
+                
+                <th>ejemplo_básico</th>
+                <th>proposito</th>
+                <th>ejemplo_en_un_tema</th>
+
+                <th>reglas de uso</th>
+                <th>errores comunes</th>
+                <th>memorización</th>
+
+                <th>Aplicación práctica</th>
+                <th>nivel de dificultad</th>
+                <th>relación con otros temas</th>
+
+                <th>tiempo estimado de aprendizaje</th>
+                <th>práctica recomendada</th>
+            
+            </tr>
+        </thead>
+        <tbody id="tabla-body">
+            <tr><td colspan="2">Selecciona un lenguaje para ver la información</td></tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById("lenguaje").addEventListener("change", function() {
+            let lenguaje = this.value;
+            let tbody = document.getElementById("tabla-body");
+
+            if (!lenguaje) {
+                tbody.innerHTML = "<tr><td colspan='2'> Selecciona un lenguaje para ver la información</td></tr>";
+                return;
+            }
+
+            fetch(`/datos/${lenguaje}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        tbody.innerHTML = "";
+                        data.forEach(item => {
+                            let row = `<tr><td>${item.nivel}</td><td>${item.categoria}</td></tr><tr><td>${item.concepto}</td><tr><td>${item.descripcion}</td><tr><td>${item.ejemplo_basico}</td><tr><td>${item.nivel}</td><tr><td>${item.nivel}</td>`;
+                            tbody.innerHTML += row;
+                        });
+                    } else {
+                        tbody.innerHTML = "<tr><td colspan='2'>No hay datos para este lenguaje</td></tr>";
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
